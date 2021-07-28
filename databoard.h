@@ -2,8 +2,8 @@
 // Created by ws01 on 2021/7/23.
 //
 
-#ifndef ZEROMUSICSERVICE_DATABOARD_H
-#define ZEROMUSICSERVICE_DATABOARD_H
+#ifndef CPPORM_DATABOARD_H
+#define CPPORM_DATABOARD_H
 
 #include <memory>
 #include <list>
@@ -22,10 +22,10 @@ public:
     bool initData(const std::list<std::shared_ptr<TableBase>> &tableList); ///< 初始化程序数据
     bool getAllData(std::list<std::shared_ptr<TableBase>> &dataList, const std::shared_ptr<TableBase> &tableName); ///< 获取一个表的全部数据
 
-private:
+protected:
     SQLType sqlType_;
     std::shared_ptr<SQLBase> sqlPtr_;
 };
 
 
-#endif //ZEROMUSICSERVICE_DATABOARD_H
+#endif //CPPORM_DATABOARD_H

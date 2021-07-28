@@ -2,8 +2,8 @@
 // Created by ws01 on 2021/7/23.
 //
 
-#ifndef ZEROMUSICSERVICE_OPERATORMYSQL_H
-#define ZEROMUSICSERVICE_OPERATORMYSQL_H
+#ifndef CPPORM_OPERATORMYSQL_H
+#define CPPORM_OPERATORMYSQL_H
 
 #include "../sqlBase/sqlbase.h"
 
@@ -25,4 +25,4 @@ private:
 };
 
 
-#endif //ZEROMUSICSERVICE_OPERATORMYSQL_H
+#endif //CPPORM_OPERATORMYSQL_H

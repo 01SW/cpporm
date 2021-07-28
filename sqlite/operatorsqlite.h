@@ -2,8 +2,8 @@
 // Created by ws01 on 2021/7/24.
 //
 
-#ifndef ZEROMUSICSERVICE_OPERATORSQLITE_H
-#define ZEROMUSICSERVICE_OPERATORSQLITE_H
+#ifndef CPPORM_OPERATORSQLITE_H
+#define CPPORM_OPERATORSQLITE_H
 
 #include "../sqlBase/sqlbase.h"
 
@@ -15,4 +15,4 @@ private:
 };
 
 
-#endif //ZEROMUSICSERVICE_OPERATORSQLITE_H
+#endif //CPPORM_OPERATORSQLITE_H
