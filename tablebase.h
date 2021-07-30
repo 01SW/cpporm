@@ -19,7 +19,13 @@
                                         return #Name;             \
                                         }
 
-enum class TypeOfData:char{Bool, Int, Double, String};
+/** @brief 变量类型 **/
+enum class TypeOfData:char{
+    Bool, ///< 在不同数据库中以字节大小最小的整数型代替，所以请以short表示
+    Int,
+    Double,
+    String
+};
 
 /**
  * @brief 数据表结构体

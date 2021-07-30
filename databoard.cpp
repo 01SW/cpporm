@@ -33,6 +33,43 @@ bool DataBoard::initData(const std::list<std::shared_ptr<TableBase>> &tableList)
 }
 
 bool
-DataBoard::getAllData(std::list<std::shared_ptr<TableBase>> &dataList, const std::shared_ptr<TableBase> &tableName) {
-    return sqlPtr_->getAllData(dataList, tableName);
+DataBoard::getAllData(std::list<std::shared_ptr<TableBase>> &dataList,
+                      const std::shared_ptr<TableBase> &tableName, std::string *error) {
+    return sqlPtr_->getCustomizeData(dataList, tableName, "", error);
+}
+
+bool DataBoard::getData(std::list<std::shared_ptr<TableBase>> &dataList, const std::shared_ptr<TableBase> &table,
+                        const std::list<std::string> &condition, std::string *error) {
+    return sqlPtr_->getData(dataList, table, condition, error);
+}
+
+bool DataBoard::getPrimaryKeyData(std::shared_ptr<TableBase> &data, std::string *error) {
+    if(data->primaryKey.empty()){
+        if(error != nullptr){
+            *error = "primaryKey nullptr";
+        }
+        return false;
+    }
+    std::list<std::shared_ptr<TableBase>> dataList;
+    std::list<std::string> condition;
+    condition.emplace_back(data->primaryKey);
+
+    auto result = sqlPtr_->getData(dataList, data, condition, error);
+    if(result){
+        if(!dataList.empty()){
+            data.swap(dataList.front());
+        }
+    }
+
+    return result;
+}
+
+bool
+DataBoard::getCustomizeData(std::list<std::shared_ptr<TableBase>> &dataList, const std::shared_ptr<TableBase> &table,
+                            const std::string &condition, std::string *error) {
+    return sqlPtr_->getCustomizeData(dataList, table, condition, error);
+}
+
+bool DataBoard::insertData(const std::shared_ptr<TableBase> &data, std::string *err, bool equal) {
+    return sqlPtr_->insertData(data, err, equal);
 }

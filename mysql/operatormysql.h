@@ -17,8 +17,13 @@ public:
     void close() override;
     bool initSQL(const std::list<std::shared_ptr<TableBase>> &tableList) override;
 
-    bool getAllData(std::list<std::shared_ptr<TableBase>> &dataList,
-                    const std::shared_ptr<TableBase> &tableName) override;
+    bool getData(std::list<std::shared_ptr<TableBase>> &dataList, const std::shared_ptr<TableBase> &table,
+                 const std::list<std::string> &condition, std::string *error) override;
+    bool getCustomizeData(std::list<std::shared_ptr<TableBase>> &dataList,
+                          const std::shared_ptr<TableBase> &table, const std::string &condition,
+                          std::string *error) override;
+
+    bool insertData(const std::shared_ptr<TableBase> &data, std::string *error, bool equal) override;
 
 private:
     MYSQL mysql_;

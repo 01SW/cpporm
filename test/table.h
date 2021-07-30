@@ -10,7 +10,7 @@
 struct Test1 : public TableBase{
     int a = 0;
     double b = 0;
-    bool c = false;
+    short c = 0;
     std::string d;
     std::string e;
 
