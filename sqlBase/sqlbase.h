@@ -55,6 +55,17 @@ public:
      * @note 当该数据表存在主键且主键为自增的Int类型时默认将使用主键自增，若想强制设置主键请设置equal为true
      */
     virtual bool insertData(const std::shared_ptr<TableBase> &data, std::string *error, bool equal) = 0;
+
+    /**
+     * @brief 修改数据
+     * @details 根据指定条件查询数据，若数据存在则将其进行修改
+     * @param table 新数据
+     * @param condition 条件
+     * @param error 若修改失败时的错误原因
+     * @return 是否修改成功
+     */
+    virtual bool modifyData(const std::shared_ptr<TableBase> &table, const std::list<std::string> &condition,
+                            std::string *error) = 0;
 };
 
 #endif //CPPORM_SQLBASE_H

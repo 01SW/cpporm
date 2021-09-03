@@ -73,3 +73,8 @@ DataBoard::getCustomizeData(std::list<std::shared_ptr<TableBase>> &dataList, con
 bool DataBoard::insertData(const std::shared_ptr<TableBase> &data, std::string *err, bool equal) {
     return sqlPtr_->insertData(data, err, equal);
 }
+
+bool DataBoard::modifyData(const std::shared_ptr<TableBase> &table, const std::list<std::string> &condition,
+                           std::string *error) {
+    return sqlPtr_->modifyData(table, condition, error);
+}

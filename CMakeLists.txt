@@ -3,7 +3,7 @@ project(cpporm)
 
 set(CMAKE_CXX_STANDARD 14)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
-set(BUILD_TEST OFF)
+set(BUILD_TEST ON)
 
 add_subdirectory(mysql)
 add_subdirectory(sqlite)

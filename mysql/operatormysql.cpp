@@ -230,3 +230,8 @@ bool OperatorMySQL::insertData(const std::shared_ptr<TableBase> &data, std::stri
         return true;
     }
 }
+
+bool OperatorMySQL::modifyData(const std::shared_ptr<TableBase> &table, const std::list<std::string> &condition,
+                               std::string *error) {
+    return false;
+}

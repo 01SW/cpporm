@@ -60,6 +60,17 @@ public:
      */
     bool insertData(const std::shared_ptr<TableBase> &data, std::string *err = nullptr, bool equal = false);
 
+    /**
+     * @brief 修改数据
+     * @details 根据指定条件查询数据，若数据存在则将其进行修改
+     * @param table 新数据
+     * @param condition 条件
+     * @param error 若修改失败时的错误原因
+     * @return 是否修改成功
+     */
+    bool modifyData(const std::shared_ptr<TableBase> &table, const std::list<std::string> &condition,
+                    std::string *error = nullptr);
+
 protected:
     SQLType sqlType_;
     std::shared_ptr<SQLBase> sqlPtr_;

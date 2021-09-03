@@ -25,6 +25,9 @@ public:
 
     bool insertData(const std::shared_ptr<TableBase> &data, std::string *error, bool equal) override;
 
+    bool modifyData(const std::shared_ptr<TableBase> &table, const std::list<std::string> &condition,
+                    std::string *error) override;
+
 private:
     MYSQL mysql_;
 };
