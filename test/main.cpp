@@ -19,7 +19,7 @@ void testMySQL(){
     auto ip = "127.0.0.1";
     auto port = 3306;
     auto user = "root";
-    auto password = "root";
+    auto password = "123456";
     auto dbName = "zeroMusic";
     try {
         auto dataBoard = std::make_shared<DataBoard>(ip, port, user, password, dbName);

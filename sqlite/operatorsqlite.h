@@ -7,9 +7,12 @@
 
 #include "../sqlBase/sqlbase.h"
 
-#include <sqlite3.h>
+#include "sqlite3.h"
 
 class OperatorSQLite : public SQLBase{
+public:
+    explicit OperatorSQLite();
+
 private:
     sqlite3 *sqlite_;
 };

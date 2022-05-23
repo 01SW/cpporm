@@ -3,3 +3,7 @@
 //
 
 #include "operatorsqlite.h"
+
+OperatorSQLite::OperatorSQLite() {
+
+}

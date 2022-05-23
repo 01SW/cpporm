@@ -32,7 +32,7 @@ public:
                          const std::list<std::string> &condition, std::string *error) = 0;
     /**
      * @brief 获取数据
-     * @details 获取符合条件的数据，与getData函数功能类似。不过获取条件将有用户指定，需要用户填充部分的sql语句。
+     * @details 获取符合条件的数据，与getData函数功能类似。不过获取条件将由用户指定，需要用户填充部分的sql语句。
      * @param dataList 符合条件的结果
      * @param table 表名
      * @param condition 条件，为所需要填充的sql语句，举例:"age >= 19 and name = 'abcd'"
