@@ -17,6 +17,7 @@ class DataBoard {
 public:
     explicit DataBoard(SQLType type, const std::shared_ptr<SQLBase> &sqlPtr);
     explicit DataBoard(const std::string &ip, int port, const std::string &user, const std::string &password, const std::string &dbName); ///< mysql
+    explicit DataBoard(const std::string &db_path); ///< sqlite3
     ~DataBoard();
 
     bool initData(const std::list<std::shared_ptr<TableBase>> &tableList); ///< 初始化程序数据

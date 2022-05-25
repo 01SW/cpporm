@@ -4,6 +4,7 @@
 
 #include "databoard.h"
 #include "mysql/operatormysql.h"
+#include "sqlite/operatorsqlite.h"
 
 #include <exception>
 
@@ -18,6 +19,15 @@ DataBoard::DataBoard(const std::string &ip, int port, const std::string &user, c
     try {
         sqlPtr_ = std::make_shared<OperatorMySQL>(ip, port, user, password, dbName);
     } catch (const std::exception &ep){
+        throw ep;
+    }
+}
+
+DataBoard::DataBoard(const std::string &db_path) {
+    sqlType_ = SQLType::SQLite;
+    try {
+        sqlPtr_ = std::make_shared<OperatorSQLite>(db_path);
+    }catch (const std::exception &ep){
         throw ep;
     }
 }

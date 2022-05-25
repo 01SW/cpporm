@@ -30,7 +30,8 @@ public:
 
 private:
     MYSQL mysql_;
-};
+};.
+
 
 
 #endif //CPPORM_OPERATORMYSQL_H
